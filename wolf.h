@@ -4,48 +4,44 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
-# include <stdio.h>// dont forget
+
 typedef struct	s_data
 {
 	void		*mlx;
 	void		*win;
 	void		*img;
 	char		*data;
-	int			draw_start;
-	int 		draw_end;
-	int 		line_height;
-	int			map_width;
-	int			map_height;
-	int			win_width;
-	int			win_height;
-	int			*map;
-	int			r;
-	int			g;
-	int			b;
-    int			map_x;
-    int			map_y;
-	double		side_dist_x;
-	double		side_dist_y;
-	double		delta_dist_y;
-	double		delta_dist_x;
-	double		perp_wall_dist;
+	int			win_h;
+	int			win_w;
+	int			map_x;
+	int			map_y;
 	int			step_x;
 	int			step_y;
+	int			side;
+	int			line_h;
+	int			d_start;
+	int			d_end;
+	int			color;
 	int			hit;
-	int 		side;
-    double      camera_x;
-    double      ray_pos_x;
-    double      ray_pos_y;
-    double      ray_dir_x;
-    double      ray_dir_y;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
 	double		dir_y;
 	double		plane_x;
 	double		plane_y;
+	double		cam_x;
+	double		r_pos_x;
+	double		r_pos_y;
+	double		r_dir_x;
+	double		r_dir_y;
+	double		s_dis_x;
+	double		s_dis_y;
+	double		d_dis_x;
+	double		d_dis_y;
+	double		p_wall_d;
+	double		rot_s;
 	double		time;
-	double		old_time;
+	double		o_time;
 }				t_data;
 void			ft_create_image(t_data **data, int n);
 void			ft_put_px(t_data **data, int x, int y, double color);
