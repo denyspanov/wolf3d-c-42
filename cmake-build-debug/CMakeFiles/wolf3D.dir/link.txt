@@ -1,1 +1,1 @@
-/usr/bin/cc  -g   CMakeFiles/wolf3D.dir/main.c.o CMakeFiles/wolf3D.dir/display.c.o CMakeFiles/wolf3D.dir/mlx.c.o  -o wolf3D 
+/usr/bin/cc  -g   CMakeFiles/wolf3D.dir/main.c.o CMakeFiles/wolf3D.dir/display.c.o  -o wolf3D 

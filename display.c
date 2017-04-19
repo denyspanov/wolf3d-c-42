@@ -1,15 +1,15 @@
 #include "wolf.h"
-void	ft_put_px(t_data *data, int x, int y, double color)
+void	ft_put_px(t_data **data, int x, int y, double color)
 {
 	int p;
 
-	p = (x * 4) + (y * data->win_width * 4);
-	if ((p >= 0 && p < (data->win_width * data->win_height * 4) &&
-		 x < data->win_width && y < data->win_height && x > 0))
+	p = (x * 4) + (y * (*data)->win_width * 4);
+	if ((p >= 0 && p < ((*data)->win_width * (*data)->win_height * 4) &&
+		 x < (*data)->win_width && y < (*data)->win_height && x > 0))
 	{
-		data->data[p] = 255 * color;
-		data->data[p + 1] = 255;
-		data->data[p + 2] = 250;
+		(*data)->data[p] = 20 * color;
+		(*data)->data[p + 1] = 255 * color;
+		(*data)->data[p + 2] = 250 * color;
 	}
 }
 

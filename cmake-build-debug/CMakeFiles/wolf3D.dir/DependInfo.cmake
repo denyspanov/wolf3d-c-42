@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/denys/CLionProjects/wolf3d-c-42/display.c" "/home/denys/CLionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf3D.dir/display.c.o"
   "/home/denys/CLionProjects/wolf3d-c-42/main.c" "/home/denys/CLionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf3D.dir/main.c.o"
-  "/home/denys/CLionProjects/wolf3d-c-42/mlx.c" "/home/denys/CLionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf3D.dir/mlx.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

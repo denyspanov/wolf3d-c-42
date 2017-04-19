@@ -90,9 +90,6 @@
 		<Unit filename="/home/denys/CLionProjects/wolf3d-c-42/main.c">
 			<Option target="wolf3D"/>
 		</Unit>
-		<Unit filename="/home/denys/CLionProjects/wolf3d-c-42/mlx.c">
-			<Option target="wolf3D"/>
-		</Unit>
 		<Unit filename="/home/denys/CLionProjects/wolf3d-c-42/wolf.h">
 			<Option target="wolf3D"/>
 		</Unit>

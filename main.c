@@ -1,196 +1,168 @@
 #include "wolf.h"
-#define mapWidth 24
-#define mapHeight 24
 
-int worldMap[mapWidth][mapHeight]= {
-{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
-{1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-};
+int worldMap[24][24]=
+        {
+                {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,2,2,2,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+                {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,3,0,0,0,3,0,0,0,1},
+                {1,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,2,2,0,2,2,0,0,0,0,3,0,3,0,3,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,0,0,0,0,5,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,0,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+        };
 
-int main(void)
+void    st_data(t_data **data)
 {
-	t_data *data;
-	data = (t_data *) malloc(sizeof(t_data));
-	data->mlx = mlx_init();
-	data->mlx = mlx_new_window(data->mlx, 600, 500, "s");
-	double posX = 22, posY = 12;  //x and y start position
-	double dirX = -1, dirY = 0; //initial direction vector
-	double planeX = 0, planeY = 0.66; //the 2d raycaster version of camera plane
-	double w = 600;
-	data->win_height = 500;
-	data->win_width = 600;
-	double h = 500;
-	double time = 0; //time of current frame
-	double oldTime = 0; //time of previous frame
-	int ll = 0;
-	(512, 384, 0, "Raycaster");
-	while (ll++ < 1000)
+    (*data)->mlx = mlx_init();
+    (*data)->win_width = 512;
+    (*data)->win_height = 384;
+    (*data)->win = mlx_new_window((*data)->mlx, 512, 384, "Wolf3D");
+    (*data)->pos_x = 22;
+    (*data)->pos_y = 12;
+    (*data)->dir_x = -1;
+    (*data)->dir_y = 0;
+    (*data)->plane_x = 0;
+    (*data)->plane_y = 0.66;
+}
+
+void    draw_vert_line(int x, int start, int end, int color, t_data **data)
+{
+    if (start > end)
+    {
+        while (start >= end)
+        {
+            ft_put_px(&(*data), x, start, color);
+            start--;
+        }
+    }
+    else
+    {
+        while (start <= end)
+        {
+            ft_put_px(&(*data), x, start, color);
+            start++;
+        }
+    }
+}
+
+int   g_loop(t_data **data)
+{
+    int x;
+
+    x = -1;
+    ft_create_image(&(*data), 1);
+    while (++x < (*data)->win_width)
+    {
+        (*data)->camera_x = 2 * x / (*data)->win_width - 1;
+        (*data)->ray_pos_x = (*data)->pos_x;
+        (*data)->ray_pos_y = (*data)->pos_y;
+        (*data)->ray_dir_x = (*data)->dir_x + (*data)->plane_x * (*data)->camera_x;
+        (*data)->ray_dir_y = (*data)->dir_y + (*data)->plane_y * (*data)->camera_x;
+
+        (*data)->map_x = (int)(*data)->ray_pos_x;
+        (*data)->map_y = (int)(*data)->ray_pos_y;
+        (*data)->delta_dist_x = sqrt(1 + ((*data)->ray_dir_y * (*data)->ray_dir_y) / (*data)->ray_dir_x * (*data)->ray_dir_x);
+        (*data)->delta_dist_y = sqrt(1 + ((*data)->ray_dir_x * (*data)->ray_dir_x) / (*data)->ray_dir_y * (*data)->ray_dir_y);
+        (*data)->hit = 0;
+        if ((*data)->ray_dir_x < 0)
+        {
+            (*data)->step_x = -1;
+            (*data)->side_dist_x = ((*data)->ray_pos_x - (*data)->map_x) * (*data)->delta_dist_x;
+        }
+        else
+        {
+            (*data)->step_x  = 1;
+            (*data)->side_dist_x = ((*data)->map_x + 1.0 - (*data)->ray_pos_x) * (*data)->delta_dist_x;
+        }
+        if ((*data)->ray_dir_y < 0)
+        {
+            (*data)->step_y = -1;
+            (*data)->side_dist_y = ((*data)->ray_pos_y - (*data)->map_y) * (*data)->delta_dist_y;
+        }
+        else
+        {
+            (*data)->step_y = 1;
+            (*data)->side_dist_y = ((*data)->map_y + 1.0 - (*data)->ray_pos_y) * (*data)->delta_dist_y;
+        }
+        while ((*data)->hit == 0)
+        {
+            if ((*data)->side_dist_x < (*data)->side_dist_y)
+            {
+                (*data)->side_dist_x += (*data)->delta_dist_x;
+                (*data)->map_x += (*data)->step_x;
+                (*data)->side = 0;
+            }
+            else
+            {
+                (*data)->side_dist_y += (*data)->delta_dist_y;
+                (*data)->map_y += (*data)->step_y;
+                (*data)->side = 1;
+            }
+            if (worldMap[(*data)->map_x][(*data)->map_y] > 0)
+                (*data)->hit = 1;
+        }
+        if ((*data)->side == 0)
+            (*data)->perp_wall_dist = ((*data)->map_x - (*data)->ray_pos_x + (1 - (*data)->step_x) / 2) / (*data)->ray_dir_x;
+        else
+            (*data)->perp_wall_dist = ((*data)->map_y - (*data)->ray_pos_y + (1 - (*data)->step_y) / 2) / (*data)->ray_dir_y;
+        (*data)->line_height = (int)((*data)->win_height / (*data)->perp_wall_dist);
+        (*data)->draw_start = -(*data)->line_height / 2 + (*data)->win_height / 2;
+        if ((*data)->draw_start < 0)
+            (*data)->draw_start = 0;
+        (*data)->draw_end = (*data)->line_height / 2 + (*data)->win_height / 2;
+        if ((*data)->draw_end >= (*data)->win_height)
+            (*data)->draw_end = (*data)->win_height - 1;
+        int color;
+        color = worldMap[(*data)->map_x][(*data)->map_y];
+        if ((*data)->side == 1)
+            color /= 2;
+        draw_vert_line(x, (*data)->draw_start, (*data)->draw_end, color, &(*data));
+    }
+    ft_create_image(&(*data), 2);
+	return (0);
+}
+
+int		key_f(int key, t_data **data)
+{
+	if (key == KEY_D)
 	{
-		for (int x = 0; x < w; x++)
-		{
-			//calculate ray position and direction
-			double cameraX = 2 * x /  w - 1; //x-coordinate in camera space
-			double rayPosX = posX;
-			double rayPosY = posY;
-			double rayDirX = dirX + planeX * cameraX;
-			double rayDirY = dirY + planeY * cameraX;
-			//which box of the map we're in
-			int mapX = (int) rayPosX;
-			int mapY = (int) rayPosY;
-			int color;
-			//length of ray from current position to next x or y-side
-			double sideDistX;
-			double sideDistY;
-
-			//length of ray from one x or y-side to next x or y-side
-			double deltaDistX = sqrt(1 + (rayDirY * rayDirY) / (rayDirX * rayDirX));
-			double deltaDistY = sqrt(1 + (rayDirX * rayDirX) / (rayDirY * rayDirY));
-			double perpWallDist;
-
-			//what direction to step in x or y-direction (either +1 or -1)
-			int stepX;
-			int stepY;
-
-			int hit = 0; //was there a wall hit?
-			int side; //was a NS or a EW wall hit?
-			//calculate step and initial sideDist
-			if (rayDirX < 0)
-			{
-				stepX = -1;
-				sideDistX = (rayPosX - mapX) * deltaDistX;
-			} else
-			{
-				stepX = 1;
-				sideDistX = (mapX + 1.0 - rayPosX) * deltaDistX;
-			}
-			if (rayDirY < 0)
-			{
-				stepY = -1;
-				sideDistY = (rayPosY - mapY) * deltaDistY;
-			} else
-			{
-				stepY = 1;
-				sideDistY = (mapY + 1.0 - rayPosY) * deltaDistY;
-			}
-			//perform DDA
-			while (hit == 0)
-			{
-				//jump to next map square, OR in x-direction, OR in y-direction
-				if (sideDistX < sideDistY)
-				{
-					sideDistX += deltaDistX;
-					mapX += stepX;
-					side = 0;
-				} else
-				{
-					sideDistY += deltaDistY;
-					mapY += stepY;
-					side = 1;
-				}
-				//Check if ray has hit a wall
-				if (worldMap[mapX][mapY] > 0) hit = 1;
-			}
-			//Calculate distance projected on camera direction (oblique distance will give fisheye effect!)
-			if (side == 0) perpWallDist = (mapX - rayPosX + (1 - stepX) / 2) / rayDirX;
-			else perpWallDist = (mapY - rayPosY + (1 - stepY) / 2) / rayDirY;
-
-			//Calculate height of line to draw on screen
-			int lineHeight = (int) (h / perpWallDist);
-
-			//calculate lowest and highest pixel to fill in current stripe
-			int drawStart = -lineHeight / 2 + h / 2;
-			if (drawStart < 0)drawStart = 0;
-			int drawEnd = lineHeight / 2 + h / 2;
-			if (drawEnd >= h)drawEnd = h - 1;
-
-			//choose wall color
-			switch (worldMap[mapX][mapY])
-			{
-				case 1:
-					color = 10;
-					break; //red
-				case 2:
-					color = 20;
-					break; //green
-				case 3:
-					color = 40;
-					break; //blue
-				case 4:
-					color = 50;
-					break; //white
-				default:
-					color = 60;
-					break; //yellow
-			}
-
-			//give x and y sides different brightness
-			if (side == 1)
-			{ color = color / 2; }
-
-			//draw the pixels of the stripe as a vertical line
-			/*verLine(x, drawStart, drawEnd, color)*/;
-		}
-		mlx_loop(data->mlx);
-		/*//speed modifiers
-		double moveSpeed = frameTime * 5.0; //the constant value is in squares/second
-		double rotSpeed = frameTime * 3.0; //the constant value is in radians/second
-		readKeys();
-		//move forward if no wall in front of you
-		if (keyDown(SDLK_UP))
-		{
-			if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
-			if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
-		}
-		//move backwards if no wall behind you
-		if (keyDown(SDLK_DOWN))
-		{
-			if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
-			if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
-		}
-		//rotate to the right
-		if (keyDown(SDLK_RIGHT))
-		{
-			//both camera direction and camera plane must be rotated
-			double oldDirX = dirX;
-			dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
-			dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
-			double oldPlaneX = planeX;
-			planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
-			planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
-		}
-		//rotate to the left
-		if (keyDown(SDLK_LEFT))
-		{
-			//both camera direction and camera plane must be rotated
-			double oldDirX = dirX;
-			dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
-			dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
-			double oldPlaneX = planeX;
-			planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
-			planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
-		}
-	}*/
+		//both camera direction and camera plane must be rotated
+		double nus = M_PI / 10;
+		double oldDirX = (*data)->dir_x ;
+		(*data)->dir_x = (*data)->dir_x  * cos(-nus) - (*data)->dir_y * sin(-nus);
+		(*data)->dir_y  = oldDirX * sin(-nus) + (*data)->dir_y * cos(-nus);
+		double oldPlaneX = (*data)->plane_x;
+		(*data)->plane_x = (*data)->plane_x * cos(-nus) - (*data)->plane_y * sin(-nus);
+		(*data)->plane_y = oldPlaneX * sin(-nus) + (*data)->plane_y * cos(-nus);
 	}
+	return (0);
+}
+
+int     main(void)
+{
+    t_data *data;
+
+    data = (t_data *)malloc(sizeof(t_data));
+    st_data(&data);
+	g_loop(&data);
+	mlx_hook(data->win, 2, 3, key_f, &data);
+    mlx_loop_hook(data->mlx, &g_loop, &data);
+    mlx_loop(data->mlx);
 }

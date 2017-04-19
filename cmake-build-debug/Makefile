@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E remove -f
+RM = /home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/denys/CLionProjects/wolf3d-c-42/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.3780.121/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/denys/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -177,33 +177,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/wolf3D.dir/build.make CMakeFiles/wolf3D.dir/main.c.s
 .PHONY : main.c.s
 
-mlx.o: mlx.c.o
-
-.PHONY : mlx.o
-
-# target to build an object file
-mlx.c.o:
-	$(MAKE) -f CMakeFiles/wolf3D.dir/build.make CMakeFiles/wolf3D.dir/mlx.c.o
-.PHONY : mlx.c.o
-
-mlx.i: mlx.c.i
-
-.PHONY : mlx.i
-
-# target to preprocess a source file
-mlx.c.i:
-	$(MAKE) -f CMakeFiles/wolf3D.dir/build.make CMakeFiles/wolf3D.dir/mlx.c.i
-.PHONY : mlx.c.i
-
-mlx.s: mlx.c.s
-
-.PHONY : mlx.s
-
-# target to generate assembly for a file
-mlx.c.s:
-	$(MAKE) -f CMakeFiles/wolf3D.dir/build.make CMakeFiles/wolf3D.dir/mlx.c.s
-.PHONY : mlx.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,9 +192,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... mlx.o"
-	@echo "... mlx.i"
-	@echo "... mlx.s"
 .PHONY : help
 
 

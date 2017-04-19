@@ -11,6 +11,9 @@ typedef struct	s_data
 	void		*win;
 	void		*img;
 	char		*data;
+	int			draw_start;
+	int 		draw_end;
+	int 		line_height;
 	int			map_width;
 	int			map_height;
 	int			win_width;
@@ -19,6 +22,22 @@ typedef struct	s_data
 	int			r;
 	int			g;
 	int			b;
+    int			map_x;
+    int			map_y;
+	double		side_dist_x;
+	double		side_dist_y;
+	double		delta_dist_y;
+	double		delta_dist_x;
+	double		perp_wall_dist;
+	int			step_x;
+	int			step_y;
+	int			hit;
+	int 		side;
+    double      camera_x;
+    double      ray_pos_x;
+    double      ray_pos_y;
+    double      ray_dir_x;
+    double      ray_dir_y;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
@@ -29,8 +48,8 @@ typedef struct	s_data
 	double		old_time;
 }				t_data;
 void			ft_create_image(t_data **data, int n);
-void			ft_put_px(t_data *data, int x, int y, double color);
-void				mlx_set(t_data **data);
+void			ft_put_px(t_data **data, int x, int y, double color);
+void			mlx_set(t_data **data);
 #endif
 
 #ifdef __linux
