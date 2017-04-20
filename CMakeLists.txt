@@ -1,7 +1,17 @@
 cmake_minimum_required(VERSION 3.6)
-project(wolf3D)
-
-set(SOURCE_FILES main.c wolf.h display.c)
-set (CMAKE_SHARED_LINKER_FLAGS "-lmlx" "-lXext" "-lX11" "-lm")
-add_executable(wolf3D ${SOURCE_FILES})
-set(CMAKE_C_FLAGS )
+project(wolf)
+#set(CMAKE_C_FLAGS "-Wall -Werror -Wextra")
+set(SOURCE_FILES
+        main.c
+        display.c
+        mlx.c
+        )
+add_executable(wolf ${SOURCE_FILES})
+target_link_libraries(wolf
+       -lmlx
+       "-L/usr/lib64/X11"
+       -lm
+       -lX11
+       -lXext
+       "-L/usr/lib64/"
+       )
