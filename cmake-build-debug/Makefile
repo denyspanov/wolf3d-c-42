@@ -177,6 +177,33 @@ event.c.s:
 	$(MAKE) -f CMakeFiles/wolf.dir/build.make CMakeFiles/wolf.dir/event.c.s
 .PHONY : event.c.s
 
+leak_detector_c.o: leak_detector_c.c.o
+
+.PHONY : leak_detector_c.o
+
+# target to build an object file
+leak_detector_c.c.o:
+	$(MAKE) -f CMakeFiles/wolf.dir/build.make CMakeFiles/wolf.dir/leak_detector_c.c.o
+.PHONY : leak_detector_c.c.o
+
+leak_detector_c.i: leak_detector_c.c.i
+
+.PHONY : leak_detector_c.i
+
+# target to preprocess a source file
+leak_detector_c.c.i:
+	$(MAKE) -f CMakeFiles/wolf.dir/build.make CMakeFiles/wolf.dir/leak_detector_c.c.i
+.PHONY : leak_detector_c.c.i
+
+leak_detector_c.s: leak_detector_c.c.s
+
+.PHONY : leak_detector_c.s
+
+# target to generate assembly for a file
+leak_detector_c.c.s:
+	$(MAKE) -f CMakeFiles/wolf.dir/build.make CMakeFiles/wolf.dir/leak_detector_c.c.s
+.PHONY : leak_detector_c.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -300,6 +327,9 @@ help:
 	@echo "... event.o"
 	@echo "... event.i"
 	@echo "... event.s"
+	@echo "... leak_detector_c.o"
+	@echo "... leak_detector_c.i"
+	@echo "... leak_detector_c.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
