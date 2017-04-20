@@ -17,7 +17,7 @@ void    standart_data(t_data **data)
 int		main(int argc, char **argv)
 {
 	t_data *data;
-	atexit(report_mem_leak);
+
 	data = (t_data *)malloc(sizeof(t_data));
 	standart_data(&data);
 	f_read(&data, argv[1]);
@@ -25,6 +25,6 @@ int		main(int argc, char **argv)
 	mlx_hook(data->win, 2, 3, ev_hook, &data);
 	mlx_hook(data->win, 17, 0, key_x, &data);
 	mlx_loop_hook(data->mlx, &game_loop, &data);
-	/*mlx_loop(data->mlx);*/
+	mlx_loop(data->mlx);
 	return (0);
 }

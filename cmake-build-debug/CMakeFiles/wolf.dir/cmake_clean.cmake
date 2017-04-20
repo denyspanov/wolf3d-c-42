@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/wolf.dir/event.c.o"
   "CMakeFiles/wolf.dir/map_load.c.o"
   "CMakeFiles/wolf.dir/wolf_g.c.o"
-  "CMakeFiles/wolf.dir/leak_detector_c.c.o"
   "wolf.pdb"
   "wolf"
 )

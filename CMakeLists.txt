@@ -9,7 +9,6 @@ set(SOURCE_FILES
         map_load.c
         wolf_g.c
         libft.a
-        leak_detector_c.c
         )
 add_executable(wolf ${SOURCE_FILES})
 

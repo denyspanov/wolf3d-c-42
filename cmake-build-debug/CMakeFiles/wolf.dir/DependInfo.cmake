@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/display.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/display.c.o"
   "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/event.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/event.c.o"
-  "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/leak_detector_c.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/leak_detector_c.c.o"
   "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/main.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/main.c.o"
   "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/map_load.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/map_load.c.o"
   "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/mlx.c" "/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/cmake-build-debug/CMakeFiles/wolf.dir/mlx.c.o"

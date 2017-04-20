@@ -7,7 +7,6 @@
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h> // remove
-#include "leak_detector_c.h"
 typedef struct	s_data
 {
 	void		*mlx;

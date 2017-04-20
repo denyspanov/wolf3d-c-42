@@ -88,12 +88,6 @@
 		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/event.c">
 			<Option target="wolf"/>
 		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/leak_detector_c.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/leak_detector_c.h">
-			<Option target="wolf"/>
-		</Unit>
 		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/libft.a">
 			<Option target="wolf"/>
 		</Unit>
