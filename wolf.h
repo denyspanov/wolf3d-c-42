@@ -1,10 +1,12 @@
 #ifndef WOLF3D_WOLF_H
 # define WOLF3D_WOLF_H
 # include "mlx.h"
+# include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 # include <math.h>
-
+# include <stdio.h> // remove
 typedef struct	s_data
 {
 	void		*mlx;
@@ -21,8 +23,13 @@ typedef struct	s_data
 	int			line_h;
 	int			d_start;
 	int			d_end;
-	int			color;
+	int			r;
+	int			g;
+	int			b;
 	int			hit;
+	int			map[25][25];
+	int 		tex_w;
+	int 		tex_h;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
@@ -40,12 +47,18 @@ typedef struct	s_data
 	double		d_dis_y;
 	double		p_wall_d;
 	double		rot_s;
-	double		time;
-	double		o_time;
 }				t_data;
 void			ft_create_image(t_data **data, int n);
-void			ft_put_px(t_data **data, int x, int y, double color);
+void			ft_put_px(t_data **data, int x, int y);
 void			mlx_set(t_data **data);
+void	f_read(t_data **data, char *s);
+int		game_loop(t_data **data);
+void    draw_vert_line(int x, int start, int end, t_data **data);
+void    draw_vert_line(int x, int start, int end, t_data **data);
+void	gcolor(t_data **data);
+void	gloop_dda(t_data **data);
+int		key_x(t_data **data);
+int		ev_hook(int key, t_data **data);
 #endif
 
 #ifdef __linux

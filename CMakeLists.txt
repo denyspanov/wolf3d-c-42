@@ -5,13 +5,16 @@ set(SOURCE_FILES
         main.c
         display.c
         mlx.c
+        event.c
+        map_load.c
+        wolf_g.c
+        libft.a
         )
 add_executable(wolf ${SOURCE_FILES})
-target_link_libraries(wolf
-       -lmlx
-       "-L/usr/lib64/X11"
-       -lm
-       -lX11
-       -lXext
-       "-L/usr/lib64/"
-       )
+
+target_link_libraries (wolf
+        ${CMAKE_SOURCE_DIR}/libft.a
+        "-lmlx"
+        "-framework OpenGL"
+        "-framework AppKit"
+        )
