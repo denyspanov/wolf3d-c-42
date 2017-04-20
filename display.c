@@ -48,6 +48,12 @@ void	gcolor(t_data **data)
 		(*data)->g = 250;
 		(*data)->b = 250;
 	}
+	if ((*data)->map[(*data)->map_x][(*data)->map_y] == 0)
+	{
+		(*data)->r = 100;
+		(*data)->g = 100;
+		(*data)->b = 100;
+	}
 }
 
 void	ft_create_image(t_data **data, int n)

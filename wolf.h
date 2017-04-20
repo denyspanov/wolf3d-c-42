@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   wolf.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpanov <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/20 16:10:50 by dpanov            #+#    #+#             */
+/*   Updated: 2017/04/20 16:10:51 by dpanov           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WOLF3D_WOLF_H
 # define WOLF3D_WOLF_H
 # include "mlx.h"
@@ -6,7 +18,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
-# include <stdio.h> // remove
+
 typedef struct	s_data
 {
 	void		*mlx;
@@ -28,8 +40,8 @@ typedef struct	s_data
 	int			b;
 	int			hit;
 	int			map[25][25];
-	int 		tex_w;
-	int 		tex_h;
+	int			tex_w;
+	int			tex_h;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
@@ -51,14 +63,14 @@ typedef struct	s_data
 void			ft_create_image(t_data **data, int n);
 void			ft_put_px(t_data **data, int x, int y);
 void			mlx_set(t_data **data);
-void	f_read(t_data **data, char *s);
-int		game_loop(t_data **data);
-void    draw_vert_line(int x, int start, int end, t_data **data);
-void    draw_vert_line(int x, int start, int end, t_data **data);
-void	gcolor(t_data **data);
-void	gloop_dda(t_data **data);
-int		key_x(t_data **data);
-int		ev_hook(int key, t_data **data);
+void			f_read(t_data **data, char *s);
+int				game_loop(t_data **data);
+void			draw_vert_line(int x, int start, int end, t_data **data);
+void			draw_vert_line(int x, int start, int end, t_data **data);
+void			gcolor(t_data **data);
+void			gloop_dda(t_data **data);
+int				key_x(t_data **data);
+int				ev_hook(int key, t_data **data);
 #endif
 
 #ifdef __linux
@@ -173,7 +185,7 @@ int		ev_hook(int key, t_data **data);
 # define KEY_PAD_ENTER      65421
 # define KEY_PAD_DOT        65439
 # define KEY_PAD_DELETE     65439
-# else
+#else
 # define KEY_ESCAPE         53
 # define KEY_F1             122
 # define KEY_F2             120
@@ -291,4 +303,4 @@ int		ev_hook(int key, t_data **data);
 # define KEY_PAD_ADD        69
 # define KEY_PAD_ENTER      76
 # define KEY_PAD_DOT        65
-# endif
+#endif
