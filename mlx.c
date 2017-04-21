@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpanov <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/21 18:53:49 by dpanov            #+#    #+#             */
+/*   Updated: 2017/04/21 18:54:00 by dpanov           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf.h"
 
-void	mlx_set(t_data **data)
+void	mlx_set(t_data *data)
 {
-	(*data)->mlx = mlx_init();
-	(*data)->win = mlx_new_window((*data)->mlx, (*data)->win_w, (*data)->win_h, "Wolf3D");
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, data->win_w, data->win_h, "Wolf3D");
 }

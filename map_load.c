@@ -6,36 +6,50 @@
 /*   By: dpanov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 16:10:20 by dpanov            #+#    #+#             */
-/*   Updated: 2017/04/20 16:10:21 by dpanov           ###   ########.fr       */
+/*   Updated: 2017/04/21 18:54:35 by dpanov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void	put_data(t_data **data, char **src, int x)
-{
-	int i;
-
-	i = -1;
-	while (src[++i])
-	{
-		(*data)->map[x][i] = ft_atoi(src[i]);
-	}
-}
-
-void	f_read(t_data **data, char *s)
+void	f_read(t_data *data)
 {
 	int		fd;
-	char	*line;
-	char	**str;
+	char	line[1];
 	int		i;
+	int		j[2];
 
-	fd = open(s, O_RDONLY);
-	i = 0;
-	while (get_next_line(fd, &line) > 0)
+	fd = open("map", O_RDONLY);
+	i = -1;
+	j[0] = 0;
+	j[1] = 0;
+	while ((i = read(fd, line, 1)) > 0)
 	{
-		str = ft_strsplit(line, ' ');
-		put_data(&(*data), str, i);
-		i++;
+		if (j[1] == 25)
+		{
+			j[1] = 0;
+			j[0]++;
+		}
+		if (line[0] == '0')
+		{
+			data->map[j[0]][j[1]] = 0;
+			j[1]++;
+		}
+		if (line[0] == '1')
+		{
+			data->map[j[0]][j[1]] = 1;
+			j[1]++;
+		}
+		if (line[0] == '2')
+		{
+			data->map[j[0]][j[1]] = 2;
+			j[1]++;
+		}
+		if (line[0] == '3')
+		{
+			data->map[j[0]][j[1]] = 3;
+			j[1]++;
+		}
 	}
+	close(fd);
 }

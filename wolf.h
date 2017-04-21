@@ -39,12 +39,13 @@ typedef struct	s_data
 	int			g;
 	int			b;
 	int			hit;
-	int			map[25][25];
 	int			tex_w;
+	int			map[25][25];
 	int			tex_h;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
+	double		mov_s;
 	double		dir_y;
 	double		plane_x;
 	double		plane_y;
@@ -58,19 +59,23 @@ typedef struct	s_data
 	double		d_dis_x;
 	double		d_dis_y;
 	double		p_wall_d;
+	double		old_dir_x;
+	double		old_plane_x;
 	double		rot_s;
 }				t_data;
-void			ft_create_image(t_data **data, int n);
-void			ft_put_px(t_data **data, int x, int y);
-void			mlx_set(t_data **data);
-void			f_read(t_data **data, char *s);
-int				game_loop(t_data **data);
-void			draw_vert_line(int x, int start, int end, t_data **data);
-void			draw_vert_line(int x, int start, int end, t_data **data);
-void			gcolor(t_data **data);
-void			gloop_dda(t_data **data);
-int				key_x(t_data **data);
-int				ev_hook(int key, t_data **data);
+
+void			ft_create_image(t_data *data, int n);
+void			ft_put_px(t_data *data, int x, int y);
+void			mlx_set(t_data *data);
+void			f_read(t_data *data);
+int				game_loop(t_data *data);
+void			draw_vert_line(int x, int start, int end, t_data *data);
+void			gcolor(t_data *data);
+void			gloop_dda(t_data *data);
+int				key_x(t_data *data);
+int				ev_hook(int key, t_data *data);
+void			evvv_hook(int key, t_data *data);
+void			evv_hook(int key, t_data *data);
 #endif
 
 #ifdef __linux

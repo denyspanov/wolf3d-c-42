@@ -82,27 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/display.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/event.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/libft.a">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/main.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/map_load.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/mlx.c">
-			<Option target="wolf"/>
-		</Unit>
-		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/wolf_g.c">
-			<Option target="wolf"/>
-		</Unit>
 		<Unit filename="/nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

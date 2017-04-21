@@ -47,8 +47,6 @@ fcntl.h
 -
 math.h
 -
-stdio.h
--
 
 /nfs/2016/d/dpanov/ClionProjects/ClionProjects/wolf3d-c-42/wolf_g.c
 wolf.h
