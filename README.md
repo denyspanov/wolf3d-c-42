@@ -1,6 +1,6 @@
 # Wolf3D - dpanov (Denys Panov)
 
-Simple 3d game using raycasting.<br> ##Details This game was made for a project for UNIT Factory, using MinilibX, a custom basic library based from X11. Developped in C , using only libmath, and standard C lib.
+Simple 3d game using raycasting. This game was made for a project for UNIT Factory, using MinilibX, a custom basic library based from X11. Developped in C , using only libmath, and standard C lib.
 
 ## Install & launch
 ```bash
