@@ -37,8 +37,6 @@ int		main(void)
 	f_read(data);
 	mlx_set(data);
 	mlx_hook(data->win, 2, 3, &ev_hook, data);
-	mlx_hook(data->win, 2, 3, &evv_hook, data);
-	mlx_hook(data->win, 2, 3, &evvv_hook, data);
 	mlx_hook(data->win, 17, 0, &key_x, data);
 	mlx_loop_hook(data->mlx, &game_loop, data);
 	mlx_loop(data->mlx);

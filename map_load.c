@@ -12,14 +12,28 @@
 
 #include "wolf.h"
 
+int		f_to_data(t_data *data, int x, int y, char line)
+{
+	if (line == '0')
+		data->map[x][y] = 0;
+	else if (line == '1')
+		data->map[x][y] = 1;
+	else if (line == ' ')
+		return (0);
+	else
+		file_read_errors(1);
+	return (1);
+}
+
 void	f_read(t_data *data)
 {
 	int		fd;
-	char	line[1];
+	char	line[2];
 	int		i;
 	int		j[2];
 
-	fd = open("map", O_RDONLY);
+	if ((fd = open("map", O_RDONLY)) < 1)
+		file_read_errors(1);
 	i = -1;
 	j[0] = 0;
 	j[1] = 0;
@@ -30,26 +44,8 @@ void	f_read(t_data *data)
 			j[1] = 0;
 			j[0]++;
 		}
-		if (line[0] == '0')
-		{
-			data->map[j[0]][j[1]] = 0;
+		if (f_to_data(data, j[0], j[1], line[0]))
 			j[1]++;
-		}
-		if (line[0] == '1')
-		{
-			data->map[j[0]][j[1]] = 1;
-			j[1]++;
-		}
-		if (line[0] == '2')
-		{
-			data->map[j[0]][j[1]] = 2;
-			j[1]++;
-		}
-		if (line[0] == '3')
-		{
-			data->map[j[0]][j[1]] = 3;
-			j[1]++;
-		}
 	}
 	close(fd);
 }

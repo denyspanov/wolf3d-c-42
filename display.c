@@ -35,45 +35,6 @@ void	draw_vert_line(int x, int start, int end, t_data *data)
 	}
 }
 
-void	gtcolor(t_data *data)
-{
-	if (data->map[data->map_x][data->map_y] == 4)
-	{
-		data->r = 250;
-		data->g = 250;
-		data->b = 250;
-	}
-	if (data->map[data->map_x][data->map_y] == 0)
-	{
-		data->r = 100;
-		data->g = 100;
-		data->b = 100;
-	}
-}
-
-void	gcolor(t_data *data)
-{
-	if (data->map[data->map_x][data->map_y] == 1)
-	{
-		data->r = 250;
-		data->g = 250;
-		data->b = 250;
-	}
-	if (data->map[data->map_x][data->map_y] == 2)
-	{
-		data->r = 100;
-		data->g = 100;
-		data->b = 250;
-	}
-	if (data->map[data->map_x][data->map_y] == 3)
-	{
-		data->r = 250;
-		data->g = 250;
-		data->b = 250;
-	}
-	gtcolor(data);
-}
-
 void	ft_create_image(t_data *data, int n)
 {
 	int		sizeline;

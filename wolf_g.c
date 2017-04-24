@@ -1,7 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   wolf_g.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpanov <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/24 13:21:05 by dpanov            #+#    #+#             */
+/*   Updated: 2017/04/24 13:23:51 by dpanov           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf.h"
+
+void	dda_help(t_data *data)
+{
+	if (data->side == 0)
+		data->p_wall_d = (data->map_x - data->r_pos_x +
+				(1 - data->step_x) / 2) / data->r_dir_x;
+	else
+		data->p_wall_d = (data->map_y - data->r_pos_y +
+				(1 - data->step_y) / 2) / data->r_dir_y;
+	data->line_h = (int)(data->win_h / data->p_wall_d);
+	data->d_start = -data->line_h / 2 + data->win_h / 2;
+	if (data->d_start < 0)
+		data->d_start = 0;
+	data->d_end = data->line_h / 2 + data->win_h / 2;
+	if (data->d_end >= data->win_h)
+		data->d_end = data->win_h - 1;
+}
 
 void	gloop_dda(t_data *data)
 {
+	int stepx;
+	int stepy;
+
+	stepx = (data->r_dir_x < 0) ? -1 : 1;
+	stepy = (data->r_dir_y < 0) ? -1 : 1;
 	while (data->hit == 0)
 	{
 		if (data->s_dis_x < data->s_dis_y)
@@ -19,19 +53,8 @@ void	gloop_dda(t_data *data)
 		if (data->map[data->map_x][data->map_y] > 0)
 			data->hit = 1;
 	}
-	if (data->side == 0)
-		data->p_wall_d = (data->map_x - data->r_pos_x + (1 - data->step_x) / 2) / data->r_dir_x;
-	else
-		data->p_wall_d = (data->map_y - data->r_pos_y + (1 - data->step_y) / 2) / data->r_dir_y;
-	data->line_h = (int)(data->win_h / data->p_wall_d);
-	data->d_start = -data->line_h / 2 + data->win_h / 2;
-	if (data->d_start < 0)
-		data->d_start = 0;
-	data->d_end = data->line_h / 2 + data->win_h / 2;
-	if (data->d_end >= data->win_h)
-		data->d_end = data->win_h - 1;
-	gcolor(&(*data));
-
+	choose_color(data, stepx, stepy);
+	dda_help(data);
 }
 
 void	gloop_data(t_data *data, int x)
@@ -43,9 +66,25 @@ void	gloop_data(t_data *data, int x)
 	data->r_dir_y = data->dir_y + data->plane_y * data->cam_x;
 	data->map_x = (int)data->r_pos_x;
 	data->map_y = (int)data->r_pos_y;
-	data->d_dis_x = sqrt(1 + (data->r_dir_y * data->r_dir_y) / (data->r_dir_x * data->r_dir_x));
-	data->d_dis_y = sqrt(1 + (data->r_dir_x * data->r_dir_x) / (data->r_dir_y * data->r_dir_y));
+	data->d_dis_x = sqrt(1 + (data->r_dir_y *
+				data->r_dir_y) / (data->r_dir_x * data->r_dir_x));
+	data->d_dis_y = sqrt(1 + (data->r_dir_x *
+				data->r_dir_x) / (data->r_dir_y * data->r_dir_y));
 	data->hit = 0;
+}
+
+void	game_loop_help(t_data *data)
+{
+	if (data->r_dir_y < 0)
+	{
+		data->step_y = -1;
+		data->s_dis_y = (data->r_pos_y - data->map_y) * data->d_dis_y;
+	}
+	else
+	{
+		data->step_y = 1;
+		data->s_dis_y = (data->map_y + 1.0 - data->r_pos_y) * data->d_dis_y;
+	}
 }
 
 int		game_loop(t_data *data)
@@ -67,16 +106,7 @@ int		game_loop(t_data *data)
 			data->step_x = 1;
 			data->s_dis_x = (data->map_x + 1.0 - data->r_pos_x) * data->d_dis_x;
 		}
-		if (data->r_dir_y < 0)
-		{
-			data->step_y = -1;
-			data->s_dis_y = (data->r_pos_y - data->map_y) * data->d_dis_y;
-		}
-		else
-		{
-			data->step_y = 1;
-			data->s_dis_y = (data->map_y + 1.0 - data->r_pos_y) * data->d_dis_y;
-		}
+		game_loop_help(data);
 		gloop_dda(data);
 		draw_vert_line(x, data->d_start, data->d_end, data);
 	}

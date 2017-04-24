@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpanov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/27 11:24:34 by dpanov            #+#    #+#             */
-/*   Updated: 2017/04/24 13:30:14 by dpanov           ###   ########.fr       */
+/*   Created: 2017/04/24 13:19:57 by dpanov            #+#    #+#             */
+/*   Updated: 2017/04/24 13:20:05 by dpanov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "wolf.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	file_read_errors(int x)
 {
-	size_t bytes;
-
-	bytes = 0;
-	while (bytes < n)
+	if (x == 1)
 	{
-		*((unsigned char *)dst + bytes) = *((unsigned char *)src + bytes);
-		if (*((unsigned char *)src + bytes) == (unsigned char)c)
-			return ((unsigned char *)dst + bytes + 1);
-		bytes++;
+		ft_putstr("Map error, check map.\n");
 	}
-	return (NULL);
+	exit(0);
 }

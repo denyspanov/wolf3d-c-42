@@ -24,6 +24,7 @@ typedef struct	s_data
 	void		*mlx;
 	void		*win;
 	void		*img;
+	void		*xpm;
 	char		*data;
 	int			win_h;
 	int			win_w;
@@ -62,6 +63,12 @@ typedef struct	s_data
 	double		old_dir_x;
 	double		old_plane_x;
 	double		rot_s;
+	int			color;
+	int			t_width;
+	int			size_line;
+	int			t_height;
+	int			bits;
+	int			end;
 }				t_data;
 
 void			ft_create_image(t_data *data, int n);
@@ -70,12 +77,11 @@ void			mlx_set(t_data *data);
 void			f_read(t_data *data);
 int				game_loop(t_data *data);
 void			draw_vert_line(int x, int start, int end, t_data *data);
-void			gcolor(t_data *data);
 void			gloop_dda(t_data *data);
+void			choose_color(t_data *data, int sx, int sy);
 int				key_x(t_data *data);
+void			file_read_errors(int x);
 int				ev_hook(int key, t_data *data);
-void			evvv_hook(int key, t_data *data);
-void			evv_hook(int key, t_data *data);
 #endif
 
 #ifdef __linux

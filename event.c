@@ -44,6 +44,7 @@ void	evv_hook(int key, t_data *data)
 		data->plane_y = data->old_plane_x * sin(-data->rot_s) +
 						data->plane_y * cos(-data->rot_s);
 	}
+	evvv_hook(key, data);
 }
 
 int		ev_hook(int key, t_data *data)
@@ -68,6 +69,7 @@ int		ev_hook(int key, t_data *data)
 				data->dir_y * data->mov_s)]))
 			data->pos_y -= data->dir_y * data->mov_s;
 	}
+	evv_hook(key, data);
 	return (0);
 }
 
