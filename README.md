@@ -1,8 +1,6 @@
 # Wolf3D - dpanov (Denys Panov)
 
-# wolf3D
-
-Wolf3D is a UNIT Factory project designed to help students explore the concepts behind raycasting.
+Simple 3d game using raycasting.<br> ##Details This game was made for a project for UNIT Factory, using MinilibX, a custom basic library based from X11. Developped in C , using only libmath, and standard C lib.
 
 ## Install & launch
 ```bash
